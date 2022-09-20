@@ -1,0 +1,11 @@
+a = int(input())
+m = 0
+e = 1
+while a != 0:
+    if a > m:
+        m = a
+        e = 1
+    elif a == m:
+        e += 1
+    a = int(input())
+print(e)
