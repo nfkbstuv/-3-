@@ -1,0 +1,23 @@
+N = int(input())
+rsixtyN = []
+vavN = []
+while N > 0:
+    x = N % 60
+    rsixtyN.append(x)
+    N //= 60
+sixtyN = rsixtyN[::-1]
+for i in range(len(sixtyN)):
+    dy = int(sixtyN[i]) // 10
+    ey = int(sixtyN[i]) - dy*10
+    vavdy = []
+    vavey = []
+    for s in range(dy):
+        vavdy.append('<')
+    a = ''.join(vavdy)
+    for j in range(ey):
+        vavey.append('v')
+    b = ''.join(vavey)
+    c = a + b
+    vavN.append(c)
+fvavN = '.'.join(vavN)
+print(fvavN)
