@@ -1,0 +1,15 @@
+vav = input()
+rvav = vav[::-1]
+ev = rvav.split(".")
+lev = len(ev)
+rev = list(map(str, ev))
+vsum = 0
+for i in range(lev):
+    x = list(rev[i])
+    lx = len(x)
+    for s in range(lx):
+        if x[s] == '<':
+            vsum += 10 * 60**i
+        elif x[s] == 'v':
+            vsum += 1 * 60**i
+print(vsum)
