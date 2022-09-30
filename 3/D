@@ -1,0 +1,8 @@
+N = input()
+l = len(N)
+rN = N[::-1]
+r = []
+for i in range(l):
+    x = int(rN[i]) * (-10) ** i
+    r.append(x)
+print(sum(r))
