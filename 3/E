@@ -1,0 +1,17 @@
+may = input()
+rmay = may[::-1]
+em = rmay.split()
+lem = len(em)
+rem = list(map(str, em))
+msum = 0
+for i in range(lem):
+    x = list(rem[i])
+    lx = len(x)
+    for s in range(lx):
+        if x[s] == '.':
+            msum += 1 * 20**i
+        elif x[s] == '|':
+            msum += 5 * 20**i
+        elif x[s] == '@':
+            msum += 0 * 20**i
+print(msum)
