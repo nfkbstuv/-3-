@@ -1,0 +1,15 @@
+N = int(input())
+st = []
+for i in range(N):
+    line = input().split()
+    a, h, w, t = line
+    n = float(h) - 100
+    if float(a) >= 60 or float(w) < n - 10 or float(w) > n + 10:
+        st.append(float(t))
+if len(st) != 0:
+    sst = sum(st)
+    sum_st = sst / len(st)
+    round(sum_st, 5)
+    print(sum_st)
+else:
+    print(0)
