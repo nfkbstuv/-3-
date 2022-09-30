@@ -1,0 +1,15 @@
+str = input()
+y = ""
+pr = 1
+l = len(str)
+for i in range(l):
+    if str[i].isdigit():
+        y += str[i]
+    elif len(y) != 0:
+        pr *= int(y)
+        y = ""
+if len(y) != 0:
+    pr *= int(y)
+elif str.find('0') == -1 and str.find('1') == -1 and str.find('2') == -1 and str.find('3') == -1 and str.find('4') == -1 and str.find('5') == -1 and str.find('6') == -1 and str.find('7') == -1 and str.find('8') == -1 and str.find('9') == -1:
+    pr = 0
+print(pr)
