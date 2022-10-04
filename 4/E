@@ -1,0 +1,13 @@
+from math import ceil
+N = int(input())
+
+
+def cube_sum(n):
+    for a in range(ceil(n ** (1/3) + 1)):
+        for b in range(ceil(n ** (1/3) + 1)):
+            if n == a**3 + b**3:
+                return str(a) + " " + str(b)
+    return "impossible"
+
+
+print(cube_sum(N))
