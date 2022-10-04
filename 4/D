@@ -1,0 +1,24 @@
+n = int(input())
+
+
+def is_prime(x):
+    d = 2
+    while d < x:
+        if x % d == 0:
+            return False
+        else:
+            d += 1
+    return True
+
+
+def prime(N):
+    x = 2
+    c = 0
+    while c < N:
+        if is_prime(x):
+            c += 1
+        x += 1
+    return x - 1
+
+
+print(prime(n))
