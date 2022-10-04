@@ -1,4 +1,7 @@
-N = int(input())
+n = int(input())
+
+
+def factorize(N):
 d = 2
 while N != 1:
     if N % d == 0:
@@ -6,3 +9,6 @@ while N != 1:
         N //= d
     else:
         d += 1
+        
+        
+factorize(n)
