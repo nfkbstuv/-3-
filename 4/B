@@ -1,17 +1,14 @@
-refN = int(input())
-N = refN
-d = 2
-chek = []
-if N == 1:
-    print(1)
-else:
-    while N != 1:
-        if N % d == 0:
-            chek.append(d)
-            N //= d
+N = int(input())
+
+
+def is_prime(x):
+    d = 2
+    while d < x:
+        if x % d == 0:
+            return 0
         else:
             d += 1
-    if refN == int(chek[0]):
-        print(1)
-    else:
-        print(0)
+    return 1
+
+
+print(is_prime(N))
