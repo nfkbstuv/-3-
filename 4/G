@@ -1,0 +1,48 @@
+s_q = input()
+y = s_q.split()
+a = int(y[0])
+b = int(y[1])
+
+
+def num_9(x, n):
+    q9 = (int(x) - int(n))//8
+    return q9
+
+
+def mid_num(x, n, q9):
+    if q9 == int(n):
+        mn = 0
+    else:
+        mn = (int(x) - int(n) - 8 * int(q9)) + 1
+    return mn
+
+
+def num_1(n, q9):
+    if q9 == int(n):
+        q1 = 0
+    else:
+        q1 = int(n) - 1 - int(q9)
+    return q1
+
+
+def main(x, n):
+    if x < n or x > 9*n:
+        return "impossible"
+    else:
+        q9 = num_9(x, n)
+        mn = mid_num(x, n, q9)
+        q1 = num_1(n, q9)
+        num_list = []
+        lq1 = '1' * q1
+        lq9 = '9' * q9
+        if q1 != 0:
+            num_list.append(lq1)
+        if mn != 0:
+            num_list.append(str(mn))
+        if q9 != 0:
+            num_list.append(lq9)
+        fn = "".join(num_list)
+        return fn
+    
+    
+print(main(a, b))
