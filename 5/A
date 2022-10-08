@@ -1,0 +1,14 @@
+N = int(input())
+inl = []
+n = 0
+while n < N:
+    a = int(input())
+    inl.append(a)
+    n += 1
+M = int(input())
+linl = len(inl)
+c = 0
+for i in range(linl):
+    if inl[i] > inl[M]:
+        c += 1
+print(c)
