@@ -1,0 +1,14 @@
+from math import factorial as fc
+
+
+N = int(input()) + 1
+x = ''
+for i in range(N):
+    if i == 0:
+        print(1)
+    else:
+        for j in range(i + 1):
+            Cij = int(fc(i) / (fc(j) * fc(i - j)))
+            x = x + str(Cij) + ' '
+        print(x)
+        x = ''
