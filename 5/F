@@ -1,0 +1,15 @@
+N = int(input())
+A = []
+for k in range(N + 1):
+    A.append(k)
+A[0] = A[1] = 0
+for i in range(2, N + 1):
+    if A[i] == i:
+        for j in range(i + i, N + 1, i):
+            A[j] = 0
+fr = []
+for i in A:
+    if A[i] != 0:
+        fr.append(str(A[i]))
+sfr = ' '.join(fr)
+print(sfr)
