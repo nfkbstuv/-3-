@@ -1,0 +1,6 @@
+def reverse_array(arr, N):
+    i = 0
+    while i < N:
+        arr[i], arr[N - 1] = arr[N - 1], arr[i]
+        i += 1
+        N -= 1
