@@ -1,0 +1,19 @@
+x = input().split()
+
+
+def count_sort(A):
+    C = [0 for i in range(10)]
+    N = len(A)
+    for i in range(N):
+        C[int(A[i])] += 1
+        stC = " ".join(map(str, C))
+        print(stC)
+    res = []
+    for i in range(10):
+        for j in range(C[i]):
+            res.append(i)
+    stres = " ".join(map(str, res))
+    print(stres)
+
+
+count_sort(x)
