@@ -1,0 +1,16 @@
+x = list(map(int, input().split()))
+
+
+def choice_sort(A, k):
+    N = len(A)
+    if N - 1 <= k:
+        return
+    m = min(A[k:])
+    if A[k] > m:
+        A[A.index(m)] = A[k]
+        A[k] = m
+        print(*A)
+    return choice_sort(A, k+1)
+
+
+choice_sort(x, 0)
