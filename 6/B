@@ -1,0 +1,32 @@
+x = list(map(int, input().split()))
+
+
+def number_to_sort(a):
+    k = 0
+    for i in range(len(a) - 1):
+        if a[i + 1] < a[i]:
+            return i
+        else:
+            k += 1
+
+    return k
+
+
+k = number_to_sort(x)
+
+
+def insert_sort(a, k):
+    if k + 1 == len(a):
+        return
+    h = k + 1
+    while h >= 1 and a[h] < a[h - 1]:
+        m = a[h - 1]
+        a[h - 1] = a[h]
+        a[h] = m
+        print(*a)
+        h -= 1
+    return insert_sort(a, k + 1)
+
+
+if k < len(x) - 1:
+    insert_sort(x, k)
