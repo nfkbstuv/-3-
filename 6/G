@@ -1,0 +1,51 @@
+N = int(input())
+m = [int(input()) for i in range(N)]
+
+
+def bubble_sort(A):
+    N = len(A)
+    for p in range(1, N):
+        for k in range(N-p):
+            if int(A[k]) > int(A[k+1]):
+                A[k], A[k+1] = A[k+1], A[k]
+
+
+def get_key(value, d):
+    lk = []
+    for k, v in d.items():
+        if v == value:
+            lk.append(k)
+    return lk
+
+
+def sum_of_digits(n):
+    if n < 10:
+        return n
+    ln = []
+    l = len(str(n))
+    for i in range(l):
+        ln.append(int(str(n)[i]))
+    return sum(ln)
+
+
+dsum = {}
+for i in m:
+    if i not in dsum:
+        dsum[i] = sum_of_digits(i)
+mas = []
+for i in list(dsum.values()):
+    if i not in mas:
+        mas.append(i)
+bubble_sort(mas)
+for i in mas:
+    k = get_key(i, dsum)
+    if len(k) == 1:
+        cnt = m.count(k[0])
+        for j in range(cnt):
+            print(k[0])
+    else:
+        bubble_sort(k)
+        for p in k:
+            cnt = m.count(p)
+            for r in range(cnt):
+                print(p)
