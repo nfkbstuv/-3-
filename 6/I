@@ -1,0 +1,47 @@
+N = int(input())
+date = []
+mon = {1: 'January',
+       2: 'February',
+       3: 'March',
+       4: 'April',
+       5: 'May',
+       6: 'June',
+       7: 'July',
+       8: 'August',
+       9: 'September',
+       10: 'October',
+       11: 'November',
+       12: 'December'
+       }
+
+
+def bubble_sort(A, t):
+    l = len(A)
+    for i in range(l):
+        for k in range(l - 1):
+            if A[k][t] > A[k + 1][t]:
+                A[k], A[k + 1] = A[k + 1], A[k]
+    return A
+
+
+def get_key(value, d):
+    for k, v in d.items():
+        if v == value:
+            return k
+
+
+for i in range(N):
+    x = input().split()
+    x[0], x[1], x[2] = int(x[0]), get_key(x[1], mon), int(x[2])
+    if len(x[3].split(':')[0]) == 1:
+        x[3] = '0' + x[3]
+    date.append(x)
+date = bubble_sort(date, 3)
+date = bubble_sort(date, 0)
+date = bubble_sort(date, 1)
+date = bubble_sort(date, 2)
+for i in range(N):
+    date[i][1] = mon[date[i][1]]
+    if date[i][3][0] == '0':
+        date[i][3] = date[i][3][1:]
+    print(*date[i])
